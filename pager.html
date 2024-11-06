@@ -1,5 +1,25 @@
 <html>
-<img src="images/pager-mark.png">
+    <body>
+        <img id="user-image" src="images/pager-mark.png">
+
+        <script>
+          const urlParams = new URLSearchParams(window.location.search);
+          const userId = urlParams.get('user');
+
+          const userImages = {
+            "2": "images/pager-brad.png",
+            "1004": "images/pager-mark.png",
+          };
+
+          const userImage = document.getElementById('user-image');
+
+          if (userId && userImages[userId]) {
+            userImage.src = userImages[userId];
+          } else {
+            userImage.src = "images/pager-placeholder.png";
+          }
+        </script>
+    </body>
 </html>
 
 <style>
